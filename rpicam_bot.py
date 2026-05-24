@@ -261,7 +261,7 @@ async def record_video(update: Update, duration: int) -> None:
 
         result = subprocess.run(
             [
-                "rpicam-vid", # IF libcam WORK IN YOUR CASE THEN REPLACE rpicam TO libcamera
+                "rpicam-vid", # IF libcamera WORK IN YOUR CASE THEN REPLACE rpicam TO libcamera
                 "-t", str(duration * 1000),
                 "--nopreview",
                 "--width", "1280",
