@@ -66,6 +66,12 @@ python3 rpicam_bot.py
 
 ---
 
+## Notes
+
+- Multiple user ID's support separate with comma
+- If rpicam does not work in your case see line 264 in code
+
+
 ## Security
 
 - Only users listed in `ALLOWED_IDS` can operate the bot
