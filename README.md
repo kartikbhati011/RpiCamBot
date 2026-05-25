@@ -71,13 +71,32 @@ python3 rpicam_bot.py
 - Multiple user ID's support separate with comma
 - If rpicam does not work in your case see line 264 in code
 
+## 📸 Photo Quality Options
 
+| # | Resolution | Size Name    | JPEG Quality |
+|---|------------|--------------|---------------|
+| 1 | 640×360    | Low          | 50            |
+| 2 | 1280×720   | HD           | 75            |
+| 3 | 1920×1080  | Full HD      | 85            |
+| 4 | 1920×1080  | Full HD HQ   | 95            |
+
+### ⚙️ Example Configuration 4. Full HD HQ
+
+Change these two values in ```_configure_and_start_camera(cam: Picamera2)``` line 43
+
+```
+cfg = cam.create_still_configuration(main={"size": (1920, 1080)})
+```
+
+and JPEG quality in ```capture_frames()``` line 164
+```
+[int(cv2.IMWRITE_JPEG_QUALITY), 95]
+```
 ## Security
 
 - Only users listed in `ALLOWED_IDS` can operate the bot
 - The MJPEG stream is protected by HTTP Basic Auth
 
----
 
 ## License
 
