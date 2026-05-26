@@ -82,15 +82,35 @@ python3 rpicam_bot.py
 
 ### ⚙️ Example Configuration 4. Full HD HQ
 
-Change these two values in ```_configure_and_start_camera(cam: Picamera2)``` line 43
+Change these two values in ```_configure_and_start_camera(cam: Picamera2)``` line 41
 
 ```
 cfg = cam.create_still_configuration(main={"size": (1920, 1080)})
 ```
 
-and JPEG quality in ```capture_frames()``` line 164
+and JPEG quality in ```capture_frames()``` line 153
 ```
 [int(cv2.IMWRITE_JPEG_QUALITY), 95]
+```
+
+## 🎥 Video Quality Options
+
+| # | Resolution | Size Name   | Framerate | Bitrate | Est. Size/min |
+|---|------------|-------------|------------|----------|----------------|
+| 1 | 640×360    | Low         | 24 fps     | 1 Mbps   | ~7 MB          |
+| 2 | 1280×720   | HD          | 24 fps     | 2 Mbps   | ~15 MB         |
+| 3 | 1280×720   | HD HQ       | 30 fps     | 5 Mbps   | ~37 MB         |
+| 4 | 1920×1080  | FullHD      | 24 fps     | 8 Mbps   | ~60 MB         |
+| 5 | 1920×1080  | FullHD HQ   | 30 fps     | 10 Mbps  | ~75 MB         |
+
+### ⚙️ Example Configuration 5. FullHD HQ
+
+Change these values in ```record_video``` line 249
+```
+"--width", "1920",
+"--height", "1080",
+"--framerate", "30",
+"--bitrate", "10000000",   # 1 mpbs bitrate = 1000000
 ```
 ## Security
 
