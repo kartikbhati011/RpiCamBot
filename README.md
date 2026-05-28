@@ -29,7 +29,7 @@ A Telegram bot for your Raspberry Pi camera — take photos, record videos, stre
 
 ## Requirements
 
-- Raspberry Pi with camera module
+- Raspberry Pi with camera module ([Amazon](https://amzn.in/d/0ea5sp6H))
 - Python 3.10+
 - `cloudflared` installed ([download](https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/install-and-setup/installation/))
 
