@@ -1,6 +1,6 @@
 # 📷 RpiCam Bot
 
-A Telegram bot for your Raspberry Pi camera — take photos, record videos, stream live, and schedule interval captures, all from Telegram.
+A Telegram bot for your Raspberry Pi camera — take photos, record videos and schedule interval captures, all from Telegram.
 
 ---
 
@@ -21,8 +21,6 @@ A Telegram bot for your Raspberry Pi camera — take photos, record videos, stre
 | `/livephotoevery1h` | Photo every 1 hour |
 | `/livevideoevery10m30s` | 30s clip every 10 minutes |
 | `/livevideoevery1h10s` | 10s clip every 1 hour |
-| `/live` | Start MJPEG stream via Cloudflare tunnel |
-| `/stopstream` | Stop the live stream |
 | `/status` | CPU temp, RAM usage, storage |
 
 ---
@@ -31,7 +29,6 @@ A Telegram bot for your Raspberry Pi camera — take photos, record videos, stre
 
 - Raspberry Pi with camera module ([Amazon](https://amzn.in/d/0ea5sp6H))
 - Python 3.10+
-- `cloudflared` installed ([download](https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/install-and-setup/installation/))
 
 ---
 
@@ -58,9 +55,6 @@ pip3 install -r requirements.txt --break-system-packages
 ### 3. Run the bot
 
 ```bash
-export BOT_TOKEN="your_telegram_token_here"
-export ALLOWED_IDS="telegram_user_id_here"
-export STREAM_PASSWORD="stream_passwd_here"
 python3 rpicam_bot.py
 ```
 
@@ -69,7 +63,6 @@ python3 rpicam_bot.py
 ## Notes
 
 - Multiple user ID's support separate with comma
-- If rpicam does not work in your case see line 264 in code
 
 ## 📸 Photo Quality Options
 
@@ -78,20 +71,8 @@ python3 rpicam_bot.py
 | 1 | 640×360    | Low          | 50            |
 | 2 | 1280×720   | HD           | 75            |
 | 3 | 1920×1080  | Full HD      | 85            |
-| 4 | 1920×1080  | Full HD HQ   | 95            |
 
 ### ⚙️ Example Configuration 4. Full HD HQ
-
-Change these two values in ```_configure_and_start_camera(cam: Picamera2)``` line 41
-
-```
-cfg = cam.create_still_configuration(main={"size": (1920, 1080)})
-```
-
-and JPEG quality in ```capture_frames()``` line 153
-```
-[int(cv2.IMWRITE_JPEG_QUALITY), 95]
-```
 
 ## 🎥 Video Quality Options
 
@@ -99,24 +80,13 @@ and JPEG quality in ```capture_frames()``` line 153
 |---|------------|-------------|------------|----------|----------------|
 | 1 | 640×360    | Low         | 24 fps     | 1 Mbps   | ~7 MB          |
 | 2 | 1280×720   | HD          | 24 fps     | 2 Mbps   | ~15 MB         |
-| 3 | 1280×720   | HD HQ       | 30 fps     | 5 Mbps   | ~37 MB         |
 | 4 | 1920×1080  | FullHD      | 24 fps     | 8 Mbps   | ~60 MB         |
-| 5 | 1920×1080  | FullHD HQ   | 30 fps     | 10 Mbps  | ~75 MB         |
 
 ### ⚙️ Example Configuration 5. FullHD HQ
 
-Change these values in ```record_video``` line 249
-```
-"--width", "1920",
-"--height", "1080",
-"--framerate", "30",
-"--bitrate", "10000000",   # 1 mpbs bitrate = 1000000
-```
 ## Security
 
 - Only users listed in `ALLOWED_IDS` can operate the bot
-- The MJPEG stream is protected by HTTP Basic Auth
-
 
 ## License
 
