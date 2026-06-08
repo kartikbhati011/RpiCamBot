@@ -72,8 +72,6 @@ python3 rpicam_bot.py
 | 2 | 1280×720   | HD           | 75            |
 | 3 | 1920×1080  | Full HD      | 85            |
 
-### ⚙️ Example Configuration 4. Full HD HQ
-
 ## 🎥 Video Quality Options
 
 | # | Resolution | Size Name   | Framerate | Bitrate | Est. Size/min |
@@ -82,12 +80,10 @@ python3 rpicam_bot.py
 | 2 | 1280×720   | HD          | 24 fps     | 2 Mbps   | ~15 MB         |
 | 4 | 1920×1080  | FullHD      | 24 fps     | 8 Mbps   | ~60 MB         |
 
-### ⚙️ Example Configuration 5. FullHD HQ
-
 ## Security
 
 - Only users listed in `ALLOWED_IDS` can operate the bot
 
 ## License
 
-MIT
+Under MIT
