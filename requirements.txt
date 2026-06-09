@@ -1,6 +1,2 @@
-flask
-opencv-python-headless
-psutil
-picamera2
 python-telegram-bot>=20.0
-opencv-python
+httpx>=0.28.0
