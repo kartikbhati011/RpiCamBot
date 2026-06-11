@@ -346,7 +346,7 @@ async def on_quality(update: Update, ctx: ContextTypes.DEFAULT_TYPE) -> None:
 
         mins = interval // 60
         unit = f"{mins // 60}h" if mins >= 60 else f"{mins}m"
-        await bot.send_message(chat_id, f"⏱ Photo every {unit} — /stopphoto to stop.")
+        await bot.send_message(chat_id, f" Photo every {unit} — /stopphoto to stop.")
 
         async def _photo_interval_loop(flag=flag, interval=interval, w=w, h=h, qkey=qkey):
             while not flag.is_set():
@@ -403,7 +403,7 @@ async def on_quality(update: Update, ctx: ContextTypes.DEFAULT_TYPE) -> None:
 
         mins = interval // 60
         unit = f"{mins // 60}h" if mins >= 60 else f"{mins}m"
-        await bot.send_message(chat_id, f"⏱ {dur}s video every {unit} — /stopvideo to stop.")
+        await bot.send_message(chat_id, f" {dur}s video every {unit} — /stopvideo to stop.")
 
         async def _video_interval_loop(flag=flag, interval=interval, dur=dur, w=w, h=h, qkey=qkey):
             while not flag.is_set():
