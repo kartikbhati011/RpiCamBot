@@ -49,7 +49,7 @@ pip3 install -r requirements.txt --break-system-packages
 
 > **Note:** Install these all packages if missing
 > ```bash
-> sudo apt install python3-opencv rpicam-apps python3-picamera2 libcamera-apps ffmpeg
+> sudo apt install rpicam-apps python3-picamera2 libcamera-apps ffmpeg
 > ```
 
 ### 3. Run the bot
@@ -86,4 +86,4 @@ python3 rpicam_bot.py
 
 ## License
 
-Under MIT
+MIT
