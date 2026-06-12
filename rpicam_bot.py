@@ -19,7 +19,7 @@ from telegram.ext import (
 from telegram.request import HTTPXRequest
 
 # Configuration
-BOT_TOKEN     = "Bot_TOKEN"
+BOT_TOKEN     = "Bot_TOKEN"             # Enter your Bot TOKEN here
 ALLOWED_USERS: list[int] = []           # leave empty to allow everyone
 MEDIA_DIR     = Path("/tmp/rpi_cam")
 MEDIA_DIR.mkdir(parents=True, exist_ok=True)
@@ -156,7 +156,8 @@ Video commands
 /livevideoevery10m30s — 30 s clip every 10 min
 /livevideoevery1h10s — 10 s clip every 1 hour
 
-All commands ask for quality before capturing.
+
+Any problem DM @HappyBoyKartik here
 """
     await update.message.reply_text(text)
 
