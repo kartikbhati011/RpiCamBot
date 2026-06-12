@@ -141,6 +141,7 @@ async def cmd_start(update: Update, ctx: ContextTypes.DEFAULT_TYPE) -> None:
 RPi Camera Bot
 
 Photo commands
+/start - Show all commands
 /photo — single photo
 /livephoto — photos every 2 s continuously
 /livephotoN — send N photos (e.g. /livephoto5)
@@ -155,7 +156,6 @@ Video commands
 /stopvideo — stop live / interval videos
 /livevideoevery10m30s — 30 s clip every 10 min
 /livevideoevery1h10s — 10 s clip every 1 hour
-
 
 Any problem DM @HappyBoyKartik here
 """
